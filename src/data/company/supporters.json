@@ -40,9 +40,9 @@
     "size": "50"
   },
   {
-    "name": "quitt.ch",
-    "href": "https://quitt.ch",
-    "logo": "backers/quitt.png",
+    "name": "Clearblue Technologies",
+    "href": "http://www.clearbluetechnologies.com/",
+    "logo": "backers/clear-blue.png",
     "type": "Patron",
     "pledge": "Palladium ($250)",
     "size": "50"
@@ -119,6 +119,14 @@
     "logo": "backers/p2l.png",
     "type": "Patron",
     "pledge": "Gold ($50)"
+  },
+  {
+    "name": "madhead",
+    "href": "https://www.madhead.com/",
+    "logo": "backers/madhead.png",
+    "type": "Patron",
+    "pledge": "Gold ($50)",
+    "dark": true
   },
   {
     "name": "VueJobs",

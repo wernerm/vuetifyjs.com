@@ -4,9 +4,9 @@
       <v-flex xs12>
         <div class="resultContainer">
           <v-layout v-bind="layoutAttributes">
-            <div class="item elevation-5"/>
-            <div class="item elevation-5"/>
-            <div class="item elevation-5"/>
+            <div class="item elevation-5"></div>
+            <div class="item elevation-5"></div>
+            <div class="item elevation-5"></div>
           </v-layout>
         </div>
       </v-flex>
@@ -18,7 +18,8 @@
                 v-for="n in alignmentsAvailable"
                 :key="n"
                 :label="n === '' ? 'Nothing' : n"
-                :value="n"></v-radio>
+                :value="n"
+              ></v-radio>
             </v-radio-group>
           </v-flex>
           <v-flex xs12 md4>
@@ -27,25 +28,29 @@
                 v-for="n in justifyAvailable"
                 :key="n"
                 :label="n === '' ? 'Nothing' : n"
-                :value="n"></v-radio>
+                :value="n"
+              ></v-radio>
             </v-radio-group>
           </v-flex>
           <v-flex xs12 md4>
             <v-layout column>
               <v-radio-group v-model="flexDirection">
                 <v-checkbox
-                  label="reverse"
                   v-model="reverse"
-                  hide-details></v-checkbox>
+                  label="reverse"
+                  hide-details
+                ></v-checkbox>
                 <v-checkbox
-                  label="fill-height"
                   v-model="fillHeight"
-                  hide-details></v-checkbox>
+                  label="fill-height"
+                  hide-details
+                ></v-checkbox>
                 <v-radio
                   v-for="n in flexDirectionAvailable"
                   :key="n"
                   :label="n === '' ? 'Nothing' : n"
-                  :value="n"></v-radio>
+                  :value="n"
+                ></v-radio>
               </v-radio-group>
             </v-layout>
           </v-flex>
@@ -60,11 +65,11 @@
 </template>
 
 <script>
-  import Markup from "../../components/helpers/Markup";
+  import Markup from '../../components/helpers/Markup'
 
   export default {
     components: {Markup},
-    data() {
+    data () {
       return {
         alignmentsAvailable: ['align-center', 'align-end', 'align-space-around', 'align-space-between', 'align-start', ''],
         alignment: 'align-center',
@@ -78,7 +83,7 @@
       }
     },
     computed: {
-      layoutAttributes() {
+      layoutAttributes () {
         return {
           [this.alignment]: true,
           [this.justify]: true,
@@ -89,7 +94,7 @@
       }
     },
     methods: {
-      formatAttributes(attributes) {
+      formatAttributes (attributes) {
         const attributeArray = []
         for (const Key in attributes) {
           if (!attributes.hasOwnProperty(Key) || Key === '' || attributes[Key] === false) continue

@@ -18,7 +18,6 @@
 
 <script>
   import 'prismjs'
-  import 'prismjs/themes/prism-tomorrow.css'
   import 'prismjs/components/prism-bash.js'
   import 'prismjs/components/prism-css.js'
   import 'prismjs/components/prism-javascript.js'
@@ -122,6 +121,7 @@
       flex-wrap: wrap
       align-items: center
       vertical-align: middle
+      white-space: pre-wrap
 
       &:before
         display: none

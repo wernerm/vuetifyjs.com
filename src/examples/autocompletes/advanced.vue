@@ -33,9 +33,9 @@
         slot-scope="{ item, selected }"
       >
         <v-chip
+          :selected="selected"
           color="blue-grey"
           class="white--text"
-          :selected="selected"
         >
           <v-icon left>mdi-coin</v-icon>
           <span v-text="item.name"></span>
@@ -61,9 +61,9 @@
       </template>
     </v-autocomplete>
     <v-tabs
+      slot="extension"
       :hide-slider="!model"
       color="transparent"
-      slot="extension"
       slider-color="blue-grey"
     >
       <v-tab :disabled="!model">News</v-tab>
@@ -105,6 +105,7 @@
 
 <codepen-resources lang="json">
   {
-    "js": ["https://cdn.jsdelivr.net/npm/axios@0.18.0/dist/axios.min.js"]
+    "js": ["https://cdn.jsdelivr.net/npm/axios@0.18.0/dist/axios.min.js"],
+    "css": ["https://cdn.materialdesignicons.com/2.5.94/css/materialdesignicons.min.css"]
   }
 </codepen-resources>

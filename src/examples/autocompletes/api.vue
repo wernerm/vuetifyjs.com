@@ -33,7 +33,7 @@
     </v-card-text>
     <v-divider></v-divider>
     <v-expand-transition>
-      <v-list class="red lighten-3" v-if="model">
+      <v-list v-if="model" class="red lighten-3">
         <v-list-tile
           v-for="(field, i) in fields"
           :key="i"
@@ -60,6 +60,8 @@
 </template>
 
 <script>
+  import axios from 'axios'
+
   export default {
     data: () => ({
       descriptionLimit: 60,
@@ -116,6 +118,7 @@
 
 <codepen-resources lang="json">
   {
-    "js": ["https://cdn.jsdelivr.net/npm/axios@0.18.0/dist/axios.min.js"]
+    "js": ["https://cdn.jsdelivr.net/npm/axios@0.18.0/dist/axios.min.js"],
+    "css": ["https://cdn.materialdesignicons.com/2.5.94/css/materialdesignicons.min.css"]
   }
 </codepen-resources>
