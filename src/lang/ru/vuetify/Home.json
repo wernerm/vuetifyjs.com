@@ -29,6 +29,13 @@
     "Поддержка SSR и PWA",
     "8 vue-cli Шаблонов"
   ],
+  "checkFeaturesCtd": [
+    "80+ компонентов в стиле Material Design",
+    "Импорт отдельных компонентов A La Carte ",
+    "Transition компоненты",
+    "Blazing Fast"
+  ],
+  "componentFramework": "Component Framework",
   "letterFromAuthor": [
     "Привет всем,",
     "Я знаю, что выбор структуры пользовательского интерфейса может быть сложной задачей - есть так много вариантов выбора, и каждый из них утверждает, что они самые лучшие. Поэтому вы должны сами решить",
@@ -46,5 +53,6 @@
   "callout": "Повысьте эффективность разработки Vue и Material Design",
   "madeWithVuetify": "Проекты, выполненные с помощью Vuetify",
   "materialDesign": "Material Design",
-  "mit": "MIT License"
+  "mit": "MIT License",
+  "specialSponsors": "Особые спонсоры"
 }
