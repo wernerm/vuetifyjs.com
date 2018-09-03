@@ -140,7 +140,9 @@ function render (req, res) {
   }
 
   const context = {
-    title: 'Vuetify', // default title
+    title: '', // default title
+    description: '',
+    keywords: '',
     hostname: req.hostname,
     url: req.url,
     lang: req.params[0],
