@@ -1,7 +1,7 @@
 export default () => ({
-  products: [],
-  hasFetchedProducts: false,
-  checkout: {
-    lineItems: []
-  }
+  // products: [],
+  // hasFetchedProducts: false,
+  // checkout: {
+  //   lineItems: []
+  // }
 })
