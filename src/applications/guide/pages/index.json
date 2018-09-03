@@ -1,0 +1,145 @@
+{
+  "namespace": "guide.QuickStart",
+  "title": "header",
+  "titleText": "headerText",
+  "children": [
+    {
+      "type": "section",
+      "children": [
+        {
+          "type": "subtitle",
+          "lang": "browserHeader"
+        },
+        {
+          "type": "text",
+          "lang": "browserText"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "children": [
+        {
+          "type": "subtitle",
+          "lang": "vueCliHeader"
+        },
+        {
+          "type": "text",
+          "lang": "vueCliText1"
+        },
+        {
+          "type": "text",
+          "lang": "vueCliText2"
+        },
+        {
+          "type": "text",
+          "lang": "vueCliText3"
+        },
+        {
+          "type": "text",
+          "lang": "vueCliText4"
+        },
+        {
+          "type": "text",
+          "lang": "vueCliText5"
+        },
+        {
+          "type": "text",
+          "lang": "vueCliText6"
+        },
+        {
+          "type": "text",
+          "lang": "vueCliText7"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "children": [
+        {
+          "type": "subtitle",
+          "lang": "cdnHeader"
+        },
+        {
+          "type": "text",
+          "lang": "cdnText"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "children": [
+        {
+          "type": "subtitle",
+          "lang": "newHeader"
+        },
+        {
+          "type": "text",
+          "lang": "newText"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "children": [
+        {
+          "type": "subtitle",
+          "lang": "existingHeader"
+        },
+        {
+          "type": "text",
+          "lang": "existingText1"
+        },
+        {
+          "type": "text",
+          "lang": "existingText2"
+        },
+        {
+          "type": "text",
+          "lang": "existingText3"
+        },
+        {
+          "type": "text",
+          "lang": "existingText4"
+        },
+        {
+          "type": "text",
+          "lang": "existingText5"
+        },
+        {
+          "type": "text",
+          "lang": "existingText6"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "children": [
+        {
+          "type": "subtitle",
+          "lang": "ie11Header"
+        },
+        {
+          "type": "text",
+          "lang": "ie11Text1"
+        },
+        {
+          "type": "text",
+          "lang": "ie11Text2"
+        },
+        {
+          "type": "text",
+          "lang": "ie11Text3"
+        },
+        {
+          "type": "text",
+          "lang": "ie11Text4"
+        },
+        {
+          "type": "text",
+          "lang": "ie11Text5"
+        }
+      ]
+    }
+  ]
+}
