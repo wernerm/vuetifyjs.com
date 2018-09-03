@@ -14,20 +14,20 @@ let plugins = [
   new webpack.DefinePlugin({
     'process.env': JSON.stringify(process.env)
   }),
-  new VueLoaderPlugin(),
-  new HardSourceWebpackPlugin({
-    info: {
-      level: 'info'
-    },
-    cachePrune: {
-      // Prune once cache reaches 250MB
-      sizeThreshold: 250 * 1024 * 1024
-    }
-  }),
-  new HardSourceWebpackPlugin.ExcludeModulePlugin([
-    { test: /mini-css-extract-plugin[\\/]dist[\\/]loader/ },
-    { test: /vuetify[\\/](dist|es5)/ }
-  ])
+  new VueLoaderPlugin()
+  // new HardSourceWebpackPlugin({
+  //   info: {
+  //     level: 'info'
+  //   },
+  //   cachePrune: {
+  //     // Prune once cache reaches 250MB
+  //     sizeThreshold: 250 * 1024 * 1024
+  //   }
+  // }),
+  // new HardSourceWebpackPlugin.ExcludeModulePlugin([
+  //   { test: /mini-css-extract-plugin[\\/]dist[\\/]loader/ },
+  //   { test: /vuetify[\\/](dist|es5)/ }
+  // ])
 ]
 
 module.exports = {

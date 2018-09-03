@@ -37,14 +37,14 @@ module.exports = function setupDevServer (app, templatePath, cb) {
     update()
   })
 
-  const isTranslating = typeof process.env.TRANSLATE !== 'undefined'
-
   // modify client config to work with hot middleware
-  const entries = [clientConfig.entry.app]
-  if (!isTranslating) entries.unshift('webpack-hot-middleware/client?reload=true?name=client')
+  const entries = [
+    'webpack-hot-middleware/client?reload=true?name=client',
+    clientConfig.entry.app
+  ]
   clientConfig.entry.app = entries
   clientConfig.output.filename = '[name].js'
-  if (!isTranslating) clientConfig.plugins.push(new webpack.HotModuleReplacementPlugin({ multiStep: true }))
+  clientConfig.plugins.push(new webpack.HotModuleReplacementPlugin())
 
   const combinedConfig = [clientConfig, serverConfig]
 
@@ -79,9 +79,7 @@ module.exports = function setupDevServer (app, templatePath, cb) {
   })
 
   // hot middleware
-  if (!isTranslating) {
-    app.use(require('webpack-hot-middleware')(clientCompiler, { heartbeat: 5000 }))
-  }
+  app.use(require('webpack-hot-middleware')(clientCompiler, { heartbeat: 5000 }))
 
   return readyPromise
 }
