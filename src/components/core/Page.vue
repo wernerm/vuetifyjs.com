@@ -20,35 +20,19 @@
 </template>
 
 <script>
-  import camelCase from 'lodash/camelCase'
-  import upperFirst from 'lodash/upperFirst'
+  import kebabCase from 'lodash/kebabCase'
 
   // TODO: This is where 404 redirect will occur
   export default {
-    provide () {
-      return {
-        namespace: this.structure.namespace
-      }
-    },
-
-    props: {
-      app: {
-        type: String,
-        default: undefined
-      },
-      page: {
-        type: String,
-        default: 'index'
-      }
-    },
+    inject: ['app', 'namespace', 'page'],
 
     computed: {
       structure () {
         if (!this.app) return {}
 
-        const page = upperFirst(camelCase(this.page))
+        const namespace = kebabCase(this.namespace)
 
-        return require(`@/applications/${this.app}/pages/${page}.json`)
+        return require(`@/applications/${this.app}/pages/${namespace}/${this.page}.json`)
       }
     },
 
