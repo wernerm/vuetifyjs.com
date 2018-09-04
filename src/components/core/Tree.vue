@@ -1,15 +1,7 @@
 <script>
-  function getComponent (type) {
-    switch (type) {
-      case 'heading': return 'core-heading'
-      case 'text': return 'core-text'
-      case 'title': return 'core-title'
-      case 'markup': return 'core-markup'
-      case 'markdown': return 'core-markdown'
-      case 'subtitle': return 'core-subtitle'
-      default: return type
-    }
-  }
+  // Utilities
+  import { getComponent } from '@/util/helpers'
+
   export default {
     props: {
       children: {

@@ -20,6 +20,8 @@
 </template>
 
 <script>
+  // Utilities
+  import { getComponent } from '@/util/helpers'
   import kebabCase from 'lodash/kebabCase'
 
   // TODO: This is where 404 redirect will occur
@@ -36,13 +38,6 @@
       }
     },
 
-    methods: {
-      getComponent (type) {
-        switch (type) {
-          case 'section': return 'core-section'
-          default: return 'div'
-        }
-      }
-    }
+    methods: { getComponent }
   }
 </script>
