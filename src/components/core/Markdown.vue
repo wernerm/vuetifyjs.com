@@ -5,6 +5,9 @@
     inject: {
       namespace: {
         default: undefined
+      },
+      page: {
+        default: undefined
       }
     },
 
@@ -29,8 +32,13 @@
         code = children[0].text
       }
 
-      if (injections.namespace) {
-        code = ctx.parent.$t(`${injections.namespace}.${code}`)
+      if (code.indexOf('.') > -1) {
+        code = ctx.parent.$t(code)
+      } else if (
+        injections.namespace &&
+        injections.page
+      ) {
+        code = ctx.parent.$t(`${injections.namespace}.${injections.page}.${code}`)
       }
 
       return h(props.tag, {

@@ -1,6 +1,7 @@
 <script>
   function getComponent (type) {
     switch (type) {
+      case 'heading': return 'core-heading'
       case 'text': return 'core-text'
       case 'title': return 'core-title'
       case 'markup': return 'core-markup'
