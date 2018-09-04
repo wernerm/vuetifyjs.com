@@ -1,8 +1,10 @@
 <template>
   <div class="v-markup">
-    <prism :language="language">
-      <slot />
-    </prism>
+    <prism
+      v-if="$slots.default || code"
+      :language="language"
+      :code="code"
+    ><slot /></prism>
 
     <div class="v-markup__copy">
       <v-icon @click="copyMarkup">content_copy</v-icon>
@@ -53,28 +55,20 @@
     },
 
     props: {
-      lang: {
+      value: {
         type: String,
-        default: ''
+        default: null
       }
     },
 
     data: () => ({
-      copied: false
+      code: null,
+      copied: false,
+      language: null
     }),
 
-    computed: {
-      language () {
-        const lang = LANGUAGE_MAP[this.lang] || this.lang
-
-        if (!AVAILABLE_LANGUAGES.includes(lang)) {
-          console.log(lang + ' is unavailable')
-
-          return undefined
-        }
-
-        return lang
-      }
+    mounted () {
+      this.$nextTick(this.init)
     },
 
     methods: {
@@ -86,6 +80,17 @@
         this.copied = document.execCommand('copy')
         markup.removeAttribute('contenteditable')
         setTimeout(() => { this.copied = false }, 2000)
+      },
+      init () {
+        if (this.$slots.default || !this.value) return
+
+        import(`@/snippets/${this.value}.txt`)
+          .then(this.parseRaw)
+          .catch(err => console.log(err))
+      },
+      parseRaw (res) {
+        this.language = this.value.split('_').shift()
+        this.code = res.default.trim()
       }
     }
   }

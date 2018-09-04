@@ -1,3 +1,6 @@
+import camelCase from 'lodash/camelCase'
+import upperFirst from 'lodash/upperFirst'
+
 const requireLang = require.context(
   './',
   true,
@@ -12,11 +15,13 @@ for (const file of requireLang.keys()) {
   const path = file.replace(/(\.\/|\.json$)/g, '').split('/')
 
   path.reduce((o, s, i) => {
-    o[s] = i + 1 === path.length
-      ? requireLang(file)
-      : o[s] || {}
+    const prop = upperFirst(camelCase(s))
 
-    return o[s]
+    o[prop] = i + 1 === path.length
+      ? requireLang(file)
+      : o[prop] || {}
+
+    return o[prop]
   }, messages)
 }
 

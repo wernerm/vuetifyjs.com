@@ -3,6 +3,8 @@
     switch (type) {
       case 'text': return 'core-text'
       case 'title': return 'core-title'
+      case 'markup': return 'core-markup'
+      case 'markdown': return 'core-markdown'
       case 'subtitle': return 'core-subtitle'
       default: return type
     }
@@ -23,7 +25,9 @@
           })
         }
 
-        return h(getComponent(child.type), child.lang)
+        return h(getComponent(child.type), {
+          props: { value: child.value }
+        }, child.lang)
       })
 
       return h('div', children)

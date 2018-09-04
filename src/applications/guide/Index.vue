@@ -14,8 +14,11 @@
 </template>
 
 <script>
-  export default {
+  import Vue from 'vue'
 
+  Vue.component('WhyVuetify', () => import('./helpers/WhyVuetify'))
+
+  export default {
     components: {
       GuideDrawer: () => import('./components/Drawer'),
       GuideToolbar: () => import('./components/Toolbar')

@@ -33,9 +33,10 @@ export function createRouter (store) {
           },
           {
             name: 'Guide',
-            path: 'guide/:page?',
+            path: 'guide/:namespace/:page',
             props: route => ({
               app: 'guide',
+              namespace: route.params.namespace,
               page: route.params.page
             }),
             component: () => import('@/applications/guide/Index')
