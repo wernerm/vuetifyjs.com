@@ -7,13 +7,17 @@
 </template>
 
 <script>
+  // Utilities
+  import kebabCase from 'lodash/kebabCase'
   import { goTo } from '@/util/helpers'
 
   const release = process.env.RELEASE
 
   export default {
+    inject: ['page'],
+
     props: {
-      file: {
+      value: {
         type: String,
         default: undefined
       }
@@ -25,7 +29,9 @@
     }),
 
     computed: {
-      //
+      file () {
+        return `${this.kebabCase(this.page)}/${this.value}`
+      }
     },
 
     watch: {
@@ -83,6 +89,7 @@
       goTo () {
         goTo.call(this, `#${this.id}`)
       },
+      kebabCase,
       toggle () {
         this.active = !this.active
       },

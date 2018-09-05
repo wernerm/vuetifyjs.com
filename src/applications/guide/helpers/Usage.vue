@@ -3,8 +3,8 @@
     <core-subtitle>Generic.Pages.usage</core-subtitle>
     <core-text>{{ `${namespace}.${page}.examples.${value}.desc` }}</core-text>
     <example
-      :file="`${kebabCase(page)}/${value}`"
       :id="`usage-${-1}`"
+      :value="value"
     />
   </div>
 </template>

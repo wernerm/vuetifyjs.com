@@ -12,15 +12,13 @@
 
       <example
         :key="i"
-        :file="`${kebabCase(page)}/${example}`"
+        :value="example"
       />
     </template>
   </div>
 </template>
 
 <script>
-  // Utilities
-  import kebabCase from 'lodash/kebabCase'
 
   export default {
     inject: ['namespace', 'page'],
@@ -30,8 +28,6 @@
         type: Array,
         default: () => ([])
       }
-    },
-
-    methods: { kebabCase }
+    }
   }
 </script>
