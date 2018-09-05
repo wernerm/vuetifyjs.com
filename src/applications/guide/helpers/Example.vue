@@ -1,5 +1,7 @@
 <template>
   <v-card class="mb-5 pa-3">
+    <v-overline class="mb-3" v-text="file" />
+
     <div data-app="true">
       <component :is="component" />
     </div>

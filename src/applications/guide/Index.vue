@@ -21,6 +21,7 @@
   Vue.component('Api', () => import('./helpers/Api'))
   Vue.component('Browsers', () => import('./helpers/Browsers'))
   Vue.component('Codepen', () => import('./helpers/Codepen'))
+  Vue.component('Colors', () => import('./helpers/Colors'))
   Vue.component('Example', () => import('./helpers/Example'))
   Vue.component('Examples', () => import('./helpers/Examples'))
   Vue.component('Grid', () => import('./helpers/Grid'))
