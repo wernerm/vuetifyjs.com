@@ -12,6 +12,9 @@
         {
           "type": "text",
           "lang": "browserText"
+        },
+        {
+          "type": "browsers"
         }
       ]
     },
@@ -31,8 +34,9 @@
           "value": "bash_vue_cli_install"
         },
         {
-          "type": "text",
-          "lang": "vueCliText2"
+          "type": "alert",
+          "lang": "vueCliText2",
+          "value": "info"
         },
         {
           "type": "text",
@@ -91,6 +95,11 @@
         {
           "type": "text",
           "lang": "newText"
+        },
+        {
+          "type": "alert",
+          "lang": "newAlert",
+          "value": "error"
         }
       ]
     },
@@ -104,6 +113,11 @@
         {
           "type": "text",
           "lang": "existingText1"
+        },
+        {
+          "type": "alert",
+          "lang": "existingAlert",
+          "value": "info"
         },
         {
           "type": "text",
@@ -144,6 +158,11 @@
         {
           "type": "text",
           "lang": "existingText6"
+        },
+        {
+          "type": "alert",
+          "lang": "alert2",
+          "value": "error"
         }
       ]
     },

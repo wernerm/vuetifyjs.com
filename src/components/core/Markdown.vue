@@ -14,6 +14,10 @@
     functional: true,
 
     props: {
+      code: {
+        type: String,
+        default: ''
+      },
       source: {
         type: String,
         default: ''
@@ -26,19 +30,21 @@
 
     render (h, ctx) {
       const { children, data, injections, props } = ctx
-      let code = props.source
+      let code = props.code || props.source
 
-      if (children) {
-        code = children[0].text
-      }
+      if (!props.code) {
+        if (children) {
+          code = children[0].text
+        }
 
-      if (code.indexOf('.') > -1) {
-        code = ctx.parent.$t(code)
-      } else if (
-        injections.namespace &&
-        injections.page
-      ) {
-        code = ctx.parent.$t(`${injections.namespace}.${injections.page}.${code}`)
+        if (code.indexOf('.') > -1) {
+          code = ctx.parent.$t(code)
+        } else if (
+          injections.namespace &&
+          injections.page
+        ) {
+          code = ctx.parent.$t(`${injections.namespace}.${injections.page}.${code}`)
+        }
       }
 
       return h(props.tag, {

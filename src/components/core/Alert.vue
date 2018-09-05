@@ -3,7 +3,7 @@
     :color="computedColor"
     :icon="computedIcon"
     :value="true"
-    class="app-alert"
+    class="app-alert mb-3"
   >
     <core-markdown><slot /></core-markdown>
   </v-alert>

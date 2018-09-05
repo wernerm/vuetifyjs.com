@@ -41,15 +41,15 @@
         </div>
         <div class="pa-2 grey lighten-3 grey--text text--darken-2 d-flex">
           <v-flex>
-            <helpers-markdown
-              :source="item.description"
+            <core-markdown
+              :code="item.description"
               class="justify"
             />
-            <helpers-markup
+            <core-markup
               v-if="item.example"
               class="mt-2 mb-0"
               lang="ts"
-            >{{ genTypescriptDef(item.example) }}</helpers-markup>
+            >{{ genTypescriptDef(item.example) }}</core-markup>
           </v-flex>
         </div>
       </div>

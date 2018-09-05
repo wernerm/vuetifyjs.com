@@ -18,6 +18,14 @@
   import camelCase from 'lodash/camelCase'
   import upperFirst from 'lodash/upperFirst'
 
+  Vue.component('Api', () => import('./helpers/Api'))
+  Vue.component('Browsers', () => import('./helpers/Browsers'))
+  Vue.component('Codepen', () => import('./helpers/Codepen'))
+  Vue.component('Example', () => import('./helpers/Example'))
+  Vue.component('Examples', () => import('./helpers/Examples'))
+  Vue.component('Grid', () => import('./helpers/Grid'))
+  Vue.component('Parameters', () => import('./helpers/Parameters'))
+  Vue.component('Usage', () => import('./helpers/Usage'))
   Vue.component('WhyVuetify', () => import('./helpers/WhyVuetify'))
 
   export default {
@@ -35,6 +43,7 @@
     },
 
     props: {
+      // Provided by router
       app: {
         type: String,
         default: undefined

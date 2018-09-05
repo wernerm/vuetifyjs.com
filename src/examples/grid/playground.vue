@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-layout column>
       <v-flex xs12>
-        <div class="resultContainer">
+        <div class="result-container">
           <v-layout v-bind="layoutAttributes">
             <div class="item elevation-5"></div>
             <div class="item elevation-5"></div>
@@ -58,23 +58,46 @@
       </v-flex>
       <v-flex xs12>
         <h5>Output:</h5>
-        <markup lang="vue">{{ formatAttributes(layoutAttributes) }}</markup>
+        <markup lang="html">{{ formatAttributes(layoutAttributes) }}</markup>
       </v-flex>
     </v-layout>
   </v-container>
 </template>
 
 <script>
-  import Markup from '../../components/helpers/Markup'
+  import Markup from '../../components/core/Markup'
 
   export default {
-    components: {Markup},
+    components: {
+      Markup
+    },
     data () {
       return {
-        alignmentsAvailable: ['align-center', 'align-end', 'align-space-around', 'align-space-between', 'align-start', ''],
+        alignmentsAvailable: [
+          'align-center',
+          'align-end',
+          'align-space-around',
+          'align-space-between',
+          'align-start',
+          ''
+        ],
         alignment: 'align-center',
-        alignmentsContentAvailable: ['align-content-center', 'align-content-end', 'align-content-space-around', 'align-content-space-between', 'align-content-start', ''],
-        justifyAvailable: ['justify-center', 'justify-end', 'justify-space-around', 'justify-space-between', 'justify-start', ''],
+        alignmentsContentAvailable: [
+          'align-content-center',
+          'align-content-end',
+          'align-content-space-around',
+          'align-content-space-between',
+          'align-content-start',
+          ''
+        ],
+        justifyAvailable: [
+          'justify-center',
+          'justify-end',
+          'justify-space-around',
+          'justify-space-between',
+          'justify-start',
+          ''
+        ],
         justify: 'justify-center',
         reverse: false,
         flexDirectionAvailable: ['row', 'column', ''],
@@ -100,15 +123,14 @@
           if (!attributes.hasOwnProperty(Key) || Key === '' || attributes[Key] === false) continue
           attributeArray.push(Key.trim())
         }
-        return `<v-layout ${attributeArray.join(' ')}/>`
+        return `<v-layout ${attributeArray.join(' ')}>...</v-layout>`
       }
     }
-
   }
 </script>
 
 <style scoped>
-  .resultContainer {
+  .result-container {
     height: 350px;
   }
 

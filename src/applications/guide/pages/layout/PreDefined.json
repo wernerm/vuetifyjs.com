@@ -9,12 +9,7 @@
           "type": "alert",
           "lang": "alert1",
           "value": "error"
-        }
-      ]
-    },
-    {
-      "type": "section",
-      "children": [
+        },
         {
           "type": "subtitle",
           "lang": "markupHeader"

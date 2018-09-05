@@ -27,26 +27,6 @@
   import 'prismjs/components/prism-stylus.js'
   import 'prismjs/components/prism-typescript.js'
 
-  // Utilities
-  const AVAILABLE_LANGUAGES = [
-    'bash',
-    'css',
-    'javascript',
-    'json',
-    'markup',
-    'stylus',
-    'ts'
-  ]
-
-  const LANGUAGE_MAP = {
-    cli: 'bash',
-    html: 'markup',
-    js: 'javascript',
-    styl: 'stylus',
-    typescript: 'ts',
-    vue: 'markup'
-  }
-
   export default {
     name: 'Markup',
 
@@ -55,16 +35,20 @@
     },
 
     props: {
+      lang: {
+        type: String,
+        default: undefined
+      },
       value: {
         type: String,
         default: null
       }
     },
 
-    data: () => ({
+    data: vm => ({
       code: null,
       copied: false,
-      language: null
+      language: vm.lang
     }),
 
     mounted () {
@@ -89,7 +73,7 @@
           .catch(err => console.log(err))
       },
       parseRaw (res) {
-        this.language = this.value.split('_').shift()
+        this.language = this.lang || this.value.split('_').shift()
         this.code = res.default.trim()
       }
     }
