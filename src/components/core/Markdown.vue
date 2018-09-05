@@ -47,7 +47,15 @@
         }
       }
 
+      // Probably wants to make a list
+      const wantsList = Array.isArray(code)
+
+      if (wantsList) {
+        code = code.map(c => `- ${c}\n`).join('')
+      }
+
       return h(props.tag, {
+        staticClass: wantsList && 'mb-3', // Find a better way?
         domProps: { innerHTML: marked(code) },
         ...data
       })
