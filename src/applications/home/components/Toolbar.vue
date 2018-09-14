@@ -1,0 +1,10 @@
+<template>
+  <v-toolbar
+    app
+    color="primary"
+    dark
+    flat
+  >
+    <v-toolbar-title>Toolbar</v-toolbar-title>
+  </v-toolbar>
+</template>

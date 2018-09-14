@@ -1,9 +1,17 @@
 <template>
   <v-app>
-    <core-toolbar />
+    <home-toolbar />
 
     <v-content>
-      Home
+      <hero />
+
+      <feature />
+
+      <sponsors />
+
+      <made-with-vuetify />
     </v-content>
+
+    <home-footer />
   </v-app>
 </template>

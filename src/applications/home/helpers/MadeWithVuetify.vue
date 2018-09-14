@@ -1,7 +1,7 @@
 <template>
-  <v-card flat height="20vh" color="blue-grey lighten-3">
+  <v-card flat height="50vh" color="green lighten-4">
     <v-layout fill-height align-center justify-center>
-      <v-display-1>Hero</v-display-1>
+      <v-display-1>Made With Vuetify</v-display-1>
     </v-layout>
   </v-card>
 </template>
