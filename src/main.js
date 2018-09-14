@@ -11,10 +11,11 @@ import NoSSR from 'vue-no-ssr'
 // Bootstrap
 import '@/components'
 import '@/plugins'
-import { createStore } from '@/store/index'
-import { createRouter } from '@/router/index'
-import { createI18n } from '@/i18n/index'
+import { createStore } from '@/store'
+import { createRouter } from '@/router'
+import { createI18n } from '@/i18n'
 import { sync } from 'vuex-router-sync'
+import Applications from '@/applications'
 
 // Application
 import App from './App.vue'
@@ -28,7 +29,7 @@ Vue.config.performance = process.env.NODE_ENV === 'development'
 export function createApp (ssrContext) {
   // create store and router instances
   const store = createStore()
-  const router = createRouter(store)
+  const router = createRouter(store, Applications)
   const i18n = createI18n(ssrContext)
 
   store.state.app.currentVersion = Vuetify.version

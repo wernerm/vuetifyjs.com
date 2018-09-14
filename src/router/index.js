@@ -15,7 +15,15 @@ function getLanguageCookie () {
   return new Map(document.cookie.split('; ').map(c => c.split('='))).get('currentLanguage')
 }
 
-export function createRouter (store) {
+export function createRouter (store, applications) {
+  const children = Object.values(applications)
+    .sort((a, b) => {
+      if (a.routePriority > b.routePriority) return -1
+      if (a.routePriority < b.routePriority) return 1
+      return 0
+    })
+    .reduce((acc, cur) => acc.concat(cur.routes), [])
+
   const router = new Router({
     base: release ? `/releases/${release}` : __dirname,
     mode: release ? 'hash' : 'history',
@@ -25,23 +33,7 @@ export function createRouter (store) {
         path: '/:lang([a-z]{2,3}|[a-z]{2,3}-[a-zA-Z]{4}|[a-z]{2,3}-[A-Z]{2,3})',
         component: View,
         props: route => ({ lang: route.params.lang }),
-        children: [
-          {
-            name: 'Home',
-            path: '/',
-            component: () => import('@/applications/home/Index')
-          },
-          {
-            name: 'Guide',
-            path: 'guide/:namespace/:page',
-            props: route => ({
-              app: 'guide',
-              namespace: route.params.namespace,
-              page: route.params.page
-            }),
-            component: () => import('@/applications/guide/Index')
-          }
-        ]
+        children
       },
       {
         path: '*',
