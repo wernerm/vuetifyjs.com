@@ -1,9 +1,9 @@
-import Home from '@/applications/home/main'
-import Guide from '@/applications/guide/main'
-import ThemeGenerator from '@/applications/theme-generator/main'
+const requireApplication = require.context('./', true, /routes.js$/)
 
-export default {
-  Home,
-  Guide,
-  ThemeGenerator
-}
+let routes = []
+
+requireApplication.keys().forEach(fileName => {
+  routes = routes.concat(requireApplication(fileName).default)
+})
+
+export default routes

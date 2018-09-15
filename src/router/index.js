@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import VueAnalytics from 'vue-analytics'
 import scrollBehavior from './scroll-behavior'
+import routes from '@/applications'
 import View from '@/components/core/View'
 
 Vue.use(Router)
@@ -15,14 +16,14 @@ function getLanguageCookie () {
   return new Map(document.cookie.split('; ').map(c => c.split('='))).get('currentLanguage')
 }
 
-export function createRouter (store, applications) {
-  const children = Object.values(applications)
+export function createRouter (store, applications = []) {
+  const children = Object.values(routes)
     .sort((a, b) => {
-      if (a.routePriority > b.routePriority) return -1
-      if (a.routePriority < b.routePriority) return 1
+      if (!a.priority || !b.priority) return 0
+      if (a.priority > b.priority) return -1
+      if (a.priority < b.priority) return 1
       return 0
     })
-    .reduce((acc, cur) => acc.concat(cur.routes), [])
 
   const router = new Router({
     base: release ? `/releases/${release}` : __dirname,

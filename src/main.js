@@ -6,7 +6,6 @@ import 'event-source-polyfill'
 import Vue from 'vue'
 import Vuetify from 'vuetify'
 import axios from 'axios'
-import NoSSR from 'vue-no-ssr'
 
 // Bootstrap
 import '@/components'
@@ -15,12 +14,9 @@ import { createStore } from '@/store'
 import { createRouter } from '@/router'
 import { createI18n } from '@/i18n'
 import { sync } from 'vuex-router-sync'
-import Applications from '@/applications'
 
 // Application
 import App from './App.vue'
-
-Vue.component(NoSSR.name, NoSSR)
 
 Vue.config.performance = process.env.NODE_ENV === 'development'
 
@@ -29,7 +25,7 @@ Vue.config.performance = process.env.NODE_ENV === 'development'
 export function createApp (ssrContext) {
   // create store and router instances
   const store = createStore()
-  const router = createRouter(store, Applications)
+  const router = createRouter(store)
   const i18n = createI18n(ssrContext)
 
   store.state.app.currentVersion = Vuetify.version

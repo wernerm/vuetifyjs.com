@@ -14,8 +14,28 @@
 </template>
 
 <script>
+  import Vue from 'vue'
   import camelCase from 'lodash/camelCase'
   import upperFirst from 'lodash/upperFirst'
+
+  const components = {
+    Api: 'helpers/Api',
+    Browsers: 'helpers/Browsers',
+    Codepen: 'helpers/Codepen',
+    Colors: 'helpers/Colors',
+    Example: 'helpers/Example',
+    Examples: 'helpers/Examples',
+    Grid: 'helpers/Grid',
+    Parameters: 'helpers/Parameters',
+    Usage: 'helpers/Usage',
+    WhyVuetify: 'helpers/WhyVuetify',
+    GuideDrawer: 'layout/Drawer',
+    GuideToolbar: 'layout/Toolbar'
+  }
+
+  Object.keys(components).forEach(key => {
+    Vue.component(key, () => import(`./components/${components[key]}`))
+  })
 
   export default {
     provide () {
