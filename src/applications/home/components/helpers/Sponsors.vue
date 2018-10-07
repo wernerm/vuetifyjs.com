@@ -1,7 +1,82 @@
 <template>
-  <v-card flat height="25vh" color="purple lighten-4">
-    <v-layout fill-height align-center justify-center>
-      <v-display-1>Sponsors</v-display-1>
+  <v-card flat color="purple lighten-4 pa-5 text-xs-center">
+    <v-layout
+      column
+      mb-5
+    >
+      <v-title>Patreon Sponsors</v-title>
+
+      <v-container
+        v-for="(tier, i) in tiers"
+        :key="i"
+        grid-list-xl
+      >
+        <v-layout
+          justify-center
+          wrap
+        >
+          <v-flex
+            v-for="(sponsor, j) in tier.sponsors"
+            :key="j"
+            shrink
+          >
+            <v-card
+              :width="i > 0 ? 120 : 160"
+              class="d-flex align-center justify-center"
+              height="48"
+              v-text="`Patron ${j + 1}`"
+            />
+          </v-flex>
+        </v-layout>
+      </v-container>
     </v-layout>
+
+    <v-title>Open Collective Sponsors</v-title>
+
+    <v-container
+      grid-list-xl
+    >
+
+      <v-layout
+        justify-center
+        wrap
+      >
+        <template v-for="tier in tiers">
+          <v-flex
+            v-for="(sponsor, j) in tier.sponsors"
+            :key="j"
+            shrink
+          >
+            <v-card
+              class="d-flex align-center justify-center"
+              height="48"
+              width="120"
+              v-text="`Open Collective ${j + 1}`"
+            />
+          </v-flex>
+        </template>
+      </v-layout>
+    </v-container>
   </v-card>
 </template>
+
+<script>
+  export default {
+    data: () => ({
+      tiers: [
+        {
+          name: 'Diamond',
+          sponsors: [
+            {}, {}, {}
+          ]
+        },
+        {
+          name: 'Palladium',
+          sponsors: [
+            {}, {}, {}, {}, {}, {}, {}
+          ]
+        }
+      ]
+    })
+  }
+</script>
