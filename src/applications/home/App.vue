@@ -29,3 +29,8 @@
     }
   }
 </script>
+
+<style lang="stylus">
+  .mono
+    font-family: 'Roboto Mono', monospace !important
+</style>

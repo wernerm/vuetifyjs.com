@@ -1,17 +1,9 @@
 <template>
   <v-toolbar
-    app
-    color="primary"
-    dark
+    :app="$route.name !== 'Home'"
+    color="white"
+    flat
   >
-    <v-img
-      class="shrink mr-2"
-      contain
-      height="46"
-      width="46"
-      src="https://cdn.vuetifyjs.com/images/logos/v-alt.svg"
-    />
-
     <span class="vuetify">Vuetify</span>
 
     <v-spacer />

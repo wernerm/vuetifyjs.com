@@ -1,10 +1,12 @@
 <template>
-  <v-card flat color="purple lighten-4 pa-5 text-xs-center">
+  <v-card flat color="grey lighten-4 pa-5 text-xs-center">
     <v-layout
       column
       mb-5
     >
-      <v-title>Patreon Sponsors</v-title>
+      <v-title class="grey--text">
+        Patreon Sponsors
+      </v-title>
 
       <v-container
         v-for="(tier, i) in tiers"
@@ -31,7 +33,9 @@
       </v-container>
     </v-layout>
 
-    <v-title>Open Collective Sponsors</v-title>
+    <v-title class="grey--text">
+      Open Collective Sponsors
+    </v-title>
 
     <v-container
       grid-list-xl
