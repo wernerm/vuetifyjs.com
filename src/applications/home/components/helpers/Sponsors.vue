@@ -4,9 +4,9 @@
       column
       mb-5
     >
-      <v-title class="grey--text">
+      <v-subtitle-1 class="grey--text font-weight-bold">
         Patreon Sponsors
-      </v-title>
+      </v-subtitle-1>
 
       <v-container
         v-for="(tier, i) in tiers"
@@ -18,69 +18,70 @@
           wrap
         >
           <v-flex
-            v-for="(sponsor, j) in tier.sponsors"
-            :key="j"
+            v-for="sponsor in tier.supporters"
+            :key="sponsor.name"
             shrink
           >
-            <v-card
-              :width="i > 0 ? 120 : 160"
-              class="d-flex align-center justify-center"
-              height="48"
-              v-text="`Patron ${j + 1}`"
-            />
+            <a
+              :href="sponsor.href"
+              target="_blank"
+              rel="noopener"
+              @click="$ga.event('home sponsor click', 'click', supporter.name)"
+            >
+              <v-img
+                :alt="sponsor.name"
+                :src="`http://cdn.vuetifyjs.com/images/${sponsor.logo}`"
+                :width="i > 0 ? 120 : 160"
+                class="d-flex align-center justify-center"
+                contain
+                height="48"
+              />
+            </a>
           </v-flex>
         </v-layout>
       </v-container>
+      <v-flex xs12>
+        <v-btn
+          color="primary"
+          outline
+          round
+        >
+          Become a Sponsor!
+        </v-btn>
+      </v-flex>
     </v-layout>
 
-    <v-title class="grey--text">
+    <v-subtitle-1 class="grey--text font-weight-bold">
       Open Collective Sponsors
-    </v-title>
-
-    <v-container
-      grid-list-xl
-    >
-
-      <v-layout
-        justify-center
-        wrap
-      >
-        <template v-for="tier in tiers">
-          <v-flex
-            v-for="(sponsor, j) in tier.sponsors"
-            :key="j"
-            shrink
-          >
-            <v-card
-              class="d-flex align-center justify-center"
-              height="48"
-              width="120"
-              v-text="`Open Collective ${j + 1}`"
-            />
-          </v-flex>
-        </template>
-      </v-layout>
-    </v-container>
+    </v-subtitle-1>
   </v-card>
 </template>
 
 <script>
+  // Utilities
+  import {
+    mapGetters
+  } from 'vuex'
+
   export default {
-    data: () => ({
-      tiers: [
-        {
-          name: 'Diamond',
-          sponsors: [
-            {}, {}, {}
-          ]
-        },
-        {
-          name: 'Palladium',
-          sponsors: [
-            {}, {}, {}, {}, {}, {}, {}
-          ]
-        }
-      ]
-    })
+    computed: {
+      ...mapGetters('home', ['supporters']),
+      tiers () {
+        return [
+          {
+            name: 'Diamond',
+            supporters: [...this.supporters.diamond]
+          },
+          {
+            name: 'Palladium',
+            supporters: [...this.supporters.palladium]
+          },
+          {
+            name: 'Special',
+            supporters: [...this.supporters.special]
+          }
+        ]
+      }
+    }
   }
 </script>

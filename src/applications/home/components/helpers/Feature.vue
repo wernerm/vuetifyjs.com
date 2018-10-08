@@ -25,18 +25,14 @@
               :src="$t(`Vuetify.Home.features[${i}].img`)"
             >
             <v-card-text>
-              <translation-translatable :i18n="`Vuetify.Home.features[${i}].title`">
-                <h3
-                  class="subheading font-weight-bold"
-                  v-text="$t(`Vuetify.Home.features[${i}].title`)"
-                />
-              </translation-translatable>
-              <translation-translatable :i18n="`Vuetify.Home.features[${i}].text`">
-                <p
-                  class="mb-2"
-                  v-text="$t(`Vuetify.Home.features[${i}].text`)"
-                />
-              </translation-translatable>
+              <h3
+                class="subheading font-weight-bold"
+                v-text="$t(`Vuetify.Home.features[${i}].title`)"
+              />
+              <p
+                class="mb-2"
+                v-text="$t(`Vuetify.Home.features[${i}].text`)"
+              />
             </v-card-text>
           </v-card>
         </v-flex>

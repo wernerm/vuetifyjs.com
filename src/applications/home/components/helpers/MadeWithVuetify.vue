@@ -3,7 +3,9 @@
     class="pa-5 text-xs-center"
     flat
   >
-    <v-headline class="grey--text font-weight-light">Made With Vuetify</v-headline>
+    <v-subtitle-1 class="grey--text font-weight-bold">
+      Made With Vuetify
+    </v-subtitle-1>
 
     <v-container grid-list-xl mb-3>
       <v-layout

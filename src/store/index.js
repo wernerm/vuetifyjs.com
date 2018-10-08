@@ -1,12 +1,14 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
+import { stores } from '@/applications'
 import modules from './modules'
 
 Vue.use(Vuex)
 
 export function createStore () {
-  return new Vuex.Store({
-    modules
-  })
+  const store = new Vuex.Store({ modules })
+
+  stores.forEach(s => s(store))
+
+  return store
 }

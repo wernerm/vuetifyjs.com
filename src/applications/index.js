@@ -1,9 +1,19 @@
-const requireApplication = require.context('./', true, /routes.js$/)
+const requireApplicationRoutes = require.context('./', true, /routes.js$/)
+const requireApplicationStore = require.context('./', true, /vuex.js$/)
 
 let routes = []
 
-requireApplication.keys().forEach(fileName => {
-  routes = routes.concat(requireApplication(fileName).default)
+requireApplicationRoutes.keys().forEach(fileName => {
+  routes = routes.concat(requireApplicationRoutes(fileName).default)
 })
 
-export default routes
+let stores = []
+
+requireApplicationStore.keys().forEach(fileName => {
+  stores = stores.concat(requireApplicationStore(fileName).default)
+})
+
+export {
+  routes,
+  stores
+}

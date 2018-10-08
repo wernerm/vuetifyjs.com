@@ -19,24 +19,31 @@
           <v-layout>
             <v-btn
               color="primary"
-              round
+              depressed
               large
+              round
+              to="/quick-start/why-vuetify"
             >
               Why Vuetify?
             </v-btn>
             <v-btn
               color="primary"
               outline
-              round
               large
+              round
+              to="/getting-started/why-vuetify"
             >
               Get Started
             </v-btn>
             <v-btn
               class="grey--text"
               color="grey lighten-3"
-              round
+              depressed
               large
+              href="https://github.com/vuetifyjs/vuetify"
+              rel="noopener"
+              round
+              target="_blank"
             >
               <v-icon
                 large

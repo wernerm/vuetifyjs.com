@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import VueAnalytics from 'vue-analytics'
 import scrollBehavior from './scroll-behavior'
-import routes from '@/applications'
+import { routes } from '@/applications'
 import View from '@/components/core/View'
 
 Vue.use(Router)
