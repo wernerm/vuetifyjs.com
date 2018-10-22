@@ -22,7 +22,7 @@
               depressed
               large
               round
-              to="/quick-start/why-vuetify"
+              to="/getting-started/why-vuetify"
             >
               Why Vuetify?
             </v-btn>
@@ -31,7 +31,7 @@
               outline
               large
               round
-              to="/getting-started/why-vuetify"
+              to="/getting-started/quick-start"
             >
               Get Started
             </v-btn>

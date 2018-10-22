@@ -1,5 +1,8 @@
 import api from 'api-generator'
 
 export default {
-  api
+  api,
+  application: undefined,
+  namespace: undefined,
+  page: undefined
 }

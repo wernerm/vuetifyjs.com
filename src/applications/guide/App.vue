@@ -5,18 +5,20 @@
     <guide-drawer />
 
     <v-content>
-      <core-page
-        :app="app"
-        :page="page"
-      />
+      <v-fade-transition mode="out-in">
+        <page
+          :app="app"
+          :page="page"
+          :namespace="namespace"
+          :key="$route.path"
+        />
+      </v-fade-transition>
     </v-content>
   </v-app>
 </template>
 
 <script>
   import Vue from 'vue'
-  import camelCase from 'lodash/camelCase'
-  import upperFirst from 'lodash/upperFirst'
 
   const components = {
     Api: 'helpers/Api',
@@ -26,11 +28,15 @@
     Example: 'helpers/Example',
     Examples: 'helpers/Examples',
     Grid: 'helpers/Grid',
+    Page: 'helpers/Page',
     Parameters: 'helpers/Parameters',
     Usage: 'helpers/Usage',
     WhyVuetify: 'helpers/WhyVuetify',
     GuideDrawer: 'layout/Drawer',
-    GuideToolbar: 'layout/Toolbar'
+    GuideToolbar: 'layout/Toolbar',
+    Group: 'layout/partials/Group',
+    Item: 'layout/partials/Item',
+    SubGroup: 'layout/partials/SubGroup'
   }
 
   Object.keys(components).forEach(key => {
@@ -38,13 +44,7 @@
   })
 
   export default {
-    provide () {
-      return {
-        app: this.app,
-        namespace: upperFirst(camelCase(this.namespace)),
-        page: upperFirst(camelCase(this.page))
-      }
-    },
+    name: 'Guide',
 
     props: {
       // Provided by router
