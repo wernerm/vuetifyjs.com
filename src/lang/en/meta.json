@@ -53,6 +53,12 @@
     "description": "The upcoming planned features and new functionality coming to Vuetify. New vue components, new directives, and much much more!.",
     "keywords": "roadmap, future plans"
   },
+  "getting-started/consulting": {
+    "h1": "Consulting & Support",
+    "title": "Consulting & Support",
+    "description": "Get help and support from the creator of Vuetify, John Leider",
+    "keywords": "consulting, support, help"
+  },
   "framework/icons": {
     "h1": "Installing Icons",
     "title": "Installing Icons",
@@ -227,6 +233,12 @@
     "description": "Button component for Vuetify Framework.",
     "keywords": "vuetify, buttons, components"
   },
+  "components/button-groups": {
+    "h1": "Button groups",
+    "title": "Button groups",
+    "description": "Button groups for Vuetify Framework.",
+    "keywords": "vuetify, buttons, components, groups, button group"
+  },
   "components/floating-action-buttons": {
     "h1": "Floating Action Buttons",
     "title": "Floating Action Button Component",
@@ -316,6 +328,12 @@
     "title": "Input Component",
     "description": "Create customized inputs by extending the v-input component",
     "keywords": "inputs"
+  },
+  "components/item-groups": {
+    "h1": "Item groups",
+    "title": "Item groups",
+    "description": "Create dynamic groups for any situation",
+    "keywords": "groups"
   },
   "components/lists": {
     "h1": "Lists",
@@ -425,6 +443,12 @@
     "description": "Tabs component for the Vuetify framework.",
     "keywords": "tabs"
   },
+  "components/timelines": {
+    "h1": "Timelines",
+    "title": "Timelines",
+    "description": "Timeline component for the Vuetify framework.",
+    "keywords": "timeline, history"
+  },
   "components/textarea": {
     "h1": "Textareas",
     "title": "Textareas",
@@ -448,6 +472,18 @@
     "title": "Tooltip",
     "description": "Tooltip components for the Vuetify framework.",
     "keywords": "tooltips"
+  },
+  "components/treeview": {
+    "h1": "Treeview",
+    "title": "Treeview",
+    "description": "Treeview component for the Vuetify framework",
+    "keywords": "treeview"
+  },
+  "components/windows": {
+    "h1": "Windows",
+    "title": "Windows",
+    "description": "Windows components for the Vuetify framework.",
+    "keywords": "windows, views, transition views"
   },
   "directives/resizing": {
     "h1": "Resizing",

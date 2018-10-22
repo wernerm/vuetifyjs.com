@@ -80,27 +80,29 @@
     "spec": false
   },
   "buttons": {
-    "components": ["v-btn", "v-btn-toggle"],
+    "components": ["v-btn"],
     "examples": [
       "usage",
       "flat",
       "raised",
       "depressed",
       "dropdown",
-      "toggle",
       "icon",
       "floating",
       "loaders",
       "sizing",
       "outline",
       "round",
-      "block",
-      {
-        "file": "appBar" ,
-        "newIn": "1.1"
-      }
+      "block"
     ],
     "spec": false
+  },
+  "button-groups": {
+    "components": ["v-btn-toggle"],
+    "examples": [
+      "toggle",
+      "appBar"
+    ]
   },
   "cards": {
     "components": [
@@ -369,6 +371,14 @@
     "examples": ["usage"],
     "spec": false
   },
+  "item-groups": {
+    "components": ["v-item-group", "v-item"],
+    "newIn": "1.3",
+    "examples": [
+      "usage",
+      "post"
+    ]
+  },
   "jumbotrons": {
     "components": ["v-jumbotron"],
     "examples": [
@@ -569,7 +579,8 @@
       "customColors",
       "validation",
       { "file": "range", "newIn": "1.1" },
-      "minMax"
+      "minMax",
+      "metronome"
     ],
     "spec": false
   },
@@ -674,6 +685,19 @@
     ],
     "spec": false
   },
+  "timelines": {
+    "components": ["v-timeline", "v-timeline-item"],
+    "examples": [
+      "usage",
+      "small",
+      "icons",
+      "color",
+      "slot",
+      "alert",
+      "advanced"
+    ],
+    "spec": false
+  },
   "time-pickers": {
     "components": ["v-time-picker"],
     "examples": [
@@ -741,6 +765,23 @@
       "fadeTransition",
       "customOrigin",
       { "file": "todo", "newIn": "1.2" }
+    ]
+  },
+  "treeview": {
+    "components": ["v-treeview"],
+    "examples": [
+      "usage",
+      "fileExplorer",
+      "directory",
+      "hotspots"
+    ]
+  },
+  "windows": {
+    "components": ["v-window", "v-window-item"],
+    "examples": [
+      "usage",
+      "onboarding",
+      "account"
     ]
   }
 }
