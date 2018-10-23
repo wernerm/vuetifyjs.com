@@ -53,9 +53,9 @@
 
     methods: {
       getBrowserSupport (browser) {
-        if (browser.supported === true) return 'GettingStarted.QuickStart.browserSupport.supported'
-        else if (browser.supported === false) return 'GettingStarted.QuickStart.browserSupport.notSupported'
-        else return `GettingStarted.QuickStart.browserSupport.${browser.supported}`
+        if (browser.supported === true) return 'Guide.GettingStarted.QuickStart.browserSupport.supported'
+        else if (browser.supported === false) return 'Guide.GettingStarted.QuickStart.browserSupport.notSupported'
+        else return `Guide.GettingStarted.QuickStart.browserSupport.${browser.supported}`
       }
     }
   }

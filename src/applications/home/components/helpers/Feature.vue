@@ -21,17 +21,17 @@
             max-width="375px"
           >
             <img
-              :alt="$t(`Vuetify.Home.features[${i}].title`)"
-              :src="$t(`Vuetify.Home.features[${i}].img`)"
+              :alt="$t(`Home.Home.features[${i}].title`)"
+              :src="$t(`Home.Home.features[${i}].img`)"
             >
             <v-card-text>
               <h3
                 class="subheading font-weight-bold"
-                v-text="$t(`Vuetify.Home.features[${i}].title`)"
+                v-text="$t(`Home.Home.features[${i}].title`)"
               />
               <p
                 class="mb-2"
-                v-text="$t(`Vuetify.Home.features[${i}].text`)"
+                v-text="$t(`Home.Home.features[${i}].text`)"
               />
             </v-card-text>
           </v-card>
@@ -45,7 +45,7 @@
   export default {
     computed: {
       features () {
-        return this.$t('Vuetify.Home.features')
+        return this.$t('Home.Home.features')
       }
     }
   }

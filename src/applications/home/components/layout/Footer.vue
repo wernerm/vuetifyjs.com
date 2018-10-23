@@ -55,7 +55,7 @@
                 rel="noopener"
                 style="text-decoration: none;"
                 target="_blank"
-                v-text="$t('Vuetify.Home.mit')"
+                v-text="$t('Home.Home.mit')"
               />
               <div>
                 Copyright &copy; 2016-{{ (new Date()).getFullYear() }} Vuetify, LLC

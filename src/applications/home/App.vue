@@ -2,7 +2,7 @@
   <v-app>
     <home-toolbar />
 
-    <!-- <v-content>
+    <v-content>
       <hero />
 
       <feature />
@@ -12,7 +12,7 @@
       <made-with-vuetify />
     </v-content>
 
-    <home-footer /> -->
+    <home-footer />
   </v-app>
 </template>
 

@@ -13,9 +13,10 @@
           width="216"
         />
         <div>
-          <v-display-2 class="mono font-weight-light mb-4">
-            Supercharge your <br>development
-          </v-display-2>
+          <v-display-2
+            class="mono font-weight-light mb-4"
+            v-html="$t('Home.Home.callout')"
+          />
           <v-layout>
             <v-btn
               color="primary"
@@ -24,7 +25,7 @@
               round
               to="/getting-started/why-vuetify"
             >
-              Why Vuetify?
+              {{ $t('Home.Home.whyVuetify') }}
             </v-btn>
             <v-btn
               color="primary"
@@ -33,7 +34,7 @@
               round
               to="/getting-started/quick-start"
             >
-              Get Started
+              {{ $t('Home.Home.getStarted') }}
             </v-btn>
             <v-btn
               class="grey--text"
@@ -51,7 +52,7 @@
               >
                 mdi-github-circle
               </v-icon>
-              Github
+              {{ $t('Home.Home.github') }}
             </v-btn>
           </v-layout>
         </div>

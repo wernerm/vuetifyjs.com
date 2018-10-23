@@ -1,8 +1,13 @@
 <script>
   import marked from 'marked'
+  import camelCase from 'lodash/camelCase'
+  import upperFirst from 'lodash/upperFirst'
 
   export default {
     inject: {
+      app: {
+        default: undefined
+      },
       namespace: {
         default: undefined
       },
@@ -40,10 +45,13 @@
         if (code.indexOf('.') > -1) {
           code = ctx.parent.$t(code)
         } else if (
+          injections.app &&
           injections.namespace &&
           injections.page
         ) {
-          code = ctx.parent.$t(`${injections.namespace}.${injections.page}.${code}`)
+          code = ctx.parent.$t(
+            `${upperFirst(camelCase(injections.app))}.${injections.namespace}.${injections.page}.${code}`
+          )
         }
       }
 

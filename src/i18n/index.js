@@ -7,6 +7,7 @@ Vue.use(VueI18n)
 
 export function createI18n (ssrContext, router) {
   const loadedLanguages = {} // our default language that is pre-loaded
+  const globalLanguages = {}
 
   let locale
   if (ssrContext && ssrContext.lang) {
@@ -31,13 +32,15 @@ export function createI18n (ssrContext, router) {
     return lang
   }
 
-  function loadLanguageAsync (app, lang) {
+  function loadLanguageAsync (name, lang) {
+    const app = kebabCase(name)
     if (!loadedLanguages[app]) loadedLanguages[app] = []
 
     if (!loadedLanguages[app].includes(lang)) {
       return import(/* webpackChunkName: "lang-[request]" */ `@/applications/${app}/lang/${lang}`).then(msgs => {
-        i18n.setLocaleMessage(lang, msgs.default)
         loadedLanguages[app].push(lang)
+        globalLanguages[name] = msgs.default
+        i18n.setLocaleMessage(lang, globalLanguages)
         return Promise.resolve(setI18nLanguage(lang))
       })
     }
@@ -46,7 +49,7 @@ export function createI18n (ssrContext, router) {
 
   router.beforeEach((to, from, next) => {
     loadLanguageAsync(
-      kebabCase(to.name),
+      to.name,
       to.params.lang
     ).then(() => next())
   })
